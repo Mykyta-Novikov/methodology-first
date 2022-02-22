@@ -36,6 +36,11 @@ public final class Main {
             System.exit(INVALID_FORMAT_EXIT_STATUS);
             return;
         }
+        catch (ArithmeticException e) {
+            System.err.println(e.getMessage());
+            System.exit(INVALID_FORMAT_EXIT_STATUS);
+            return;
+        }
 
         System.out.println("\n" + equation);
         System.out.println(equation.solve());

@@ -5,6 +5,10 @@ public record Equation(
         double b,
         double c
         ) {
+    public Equation {
+        if (a == 0) throw new ArithmeticException("Quadratic equation must have non-zero first coefficient");
+    }
+
     public Solution solve() {
         var d = Math.sqrt(b*b - 4*a*c);
 
