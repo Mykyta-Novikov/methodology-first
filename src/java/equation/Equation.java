@@ -6,8 +6,6 @@ import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import static java.lang.Double.NaN;
-
 public record Equation(
         double a,
         double b,
@@ -38,15 +36,6 @@ public record Equation(
                 b = scanner.nextDouble(),
                 c = scanner.nextDouble();
 
-        double[] roots = new Equation(a, b, c).solve();
-        if (roots.length != 2)
-            throw new UnsupportedOperationException("There must be 2 roots.");
-
-        if (Double.isNaN(roots[0]) || Double.isNaN(roots[1]))
-            System.out.println("\nThere are no real roots");
-        else if (roots[0] == roots[1])
-            System.out.println("\nThere is 1 root: " + roots[0]);
-        else
-            System.out.println("\nThere are 2 roots: " + roots[0] + ", " + roots[1]);
+        System.out.println("\n" + Arrays.toString(new Equation(a, b, c).solve()));
     }
 }
