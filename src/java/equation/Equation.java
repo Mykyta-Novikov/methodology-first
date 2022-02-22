@@ -5,10 +5,13 @@ public record Equation(
         double b,
         double c
         ) {
-    public double[] solve() {
+    public Solution solve() {
         var d = Math.sqrt(b*b - 4*a*c);
 
-        return new double[]{(-b - d) /2/a, (-b + d) /2/a};
+        return new Solution(
+                (-b - d) /2/a,
+                (-b + d) /2/a
+        );
     }
 
 }

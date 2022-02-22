@@ -26,6 +26,6 @@ public final class Main {
                 b = scanner.nextDouble(),
                 c = scanner.nextDouble();
 
-        System.out.println("\n" + Arrays.toString(new Equation(a, b, c).solve()));
+        System.out.println("\n" + new Equation(a, b, c).solve());
     }
 }
