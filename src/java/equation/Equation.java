@@ -14,4 +14,11 @@ public record Equation(
         );
     }
 
+    @Override
+    public String toString() {
+        return "Equation: " +
+                "(" + a + ")x^2 + " +
+                "(" + b + ")x + " +
+                "(" + c + ")";
+    }
 }
