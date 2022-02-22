@@ -9,7 +9,9 @@ public record Equation(
         double c
         ) {
     public double[] solve() {
-        return new double[]{0d, 0d};
+        var d = Math.sqrt(b*b - 4*a*c);
+
+        return new double[]{(-b - d) /2/a, (-b + d) /2/a};
     }
 
     public static void main(String[] args) {
