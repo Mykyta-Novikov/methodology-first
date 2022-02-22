@@ -1,5 +1,8 @@
 package equation;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -15,7 +18,19 @@ public record Equation(
     }
 
     public static void main(String[] args) {
-        var scanner = new Scanner(System.in);
+        InputStream input;
+        if (args.length >= 1)
+            try {
+                input = new FileInputStream(args[0]);
+            } catch (FileNotFoundException e) {
+                System.err.println("File not found");
+                System.exit(1);
+                return;
+            }
+        else
+            input = System.in;
+
+        var scanner = new Scanner(input);
 
         double  a = scanner.nextDouble(),
                 b = scanner.nextDouble(),
